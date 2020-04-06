@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Cadastro de Produtos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="estilo.css"/>
+    </head>
+    <body>
+        
+        <h1>Cadastro:</h1>
+        <label>Cadastrar Produto</label>
+        <div id="divForm">
+            
+<!--Nome-->
+            <form method="GET" enctype="multipart/form-data" onsubmit="return validarnome() && validarpreco() && validarqtd()">
+                <label>Nome:</label>
+                <input type="text" name="txtNome" id="txtNome"/> <br> <br>
+
+<!--Preço-->
+
+                <label>Preço:</label>
+                <input type="text" name="txtPreco" id="txtPreco"/> <br> <br>
+                
+<!--Quantidade-->
+
+                <label>Quantidade:</label>
+                <input type="number" name="txtQtd" id="txtQtd" min="1"/> <br> <br>
+                
+<!--Data de Validade-->
+                
+                <label>Data de Validade:</label>
+                <input type="date" name="txtData" id="txtData"/> <br> <br>
+                
+<!--Foto-->
+
+                <label>Foto:</label>
+                <input type="file" name="fileToUpload" id="fileToUpload"> <br> <br>
+                
+<!--Categoria-->
+                
+                <label>Categoria:</label>
+                <select id="categoria">
+                    <option value="select">Selecione...</option>
+                    <option value="prod2">prod2</option>
+                    <option value="prod3">prod3</option>
+                    <option value="prod4">prod4</option>
+                </select>
+   
+                
+<!--Enviar-->
+
+                <input type="submit" value="Salvar"/>
+
+                
+                
+            </form>
+            
+            
+            
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+        <script src="scripts.js"></script>
+    </body>
+</html>
