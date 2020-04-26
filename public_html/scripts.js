@@ -34,5 +34,18 @@ function validarqtd(){
 }
 
 //Data de Validade
+function validarvalidade(){
+            var hoje = new Date();
+            var seteDias = hoje.setDate(hoje.getDate() + 7);
+            var inpt = document.getElementById("txtData");
+            var frm = new Date(inpt.value);
 
-    
+            console.log(seteDias, Date.parse(frm), Date.parse(frm) >= seteDias );
+
+            if( !(Date.parse(frm) >= seteDias) ){
+               alert("Data inválida.");
+               return false;
+           }else
+           return true;
+        }
+        

@@ -7,45 +7,46 @@
     </head>
     <body>
         
-        <h1>Cadastro:</h1>
-        <label>Cadastrar Produto</label>
+        <h1 style="text-align:center">Cadastro de Produtos:</h1>
+        <br>
         <div id="divForm">
             
+            <form method="GET" enctype="multipart/form-data" onsubmit="return validarnome()">
 <!--Nome-->
-            <form method="GET" enctype="multipart/form-data" onsubmit="return validarnome() && validarpreco() && validarqtd()">
                 <label>Nome:</label>
-                <input type="text" name="txtNome" id="txtNome"/> <br> <br>
+                <input type="text" name="txtNome" id="txtNome" required/> <br> <br>
 
 <!--Preço-->
 
-                <label>Preço:</label>
-                <input type="text" name="txtPreco" id="txtPreco"/> <br> <br>
+                <label>Preço(R$):</label>
+                <input type="number" min="1" step="any" name="txtPreco" id="txtPreco" onsubmit="return validarpreco()" required/> <br> <br>
                 
 <!--Quantidade-->
 
                 <label>Quantidade:</label>
-                <input type="number" name="txtQtd" id="txtQtd" min="1"/> <br> <br>
+                <input type="number" name="txtQtd" id="txtQtd" min="1" onsubmit="return validarqtd()" required/> <br> <br>
                 
 <!--Data de Validade-->
                 
                 <label>Data de Validade:</label>
-                <input type="date" name="txtData" id="txtData"/> <br> <br>
+                <input type="date" name="txtData" id="txtData" onsubmit="validarvalidade();" value="2020-04-27" required/> <br> <br>
                 
 <!--Foto-->
 
                 <label>Foto:</label>
-                <input type="file" name="fileToUpload" id="fileToUpload"> <br> <br>
+                <input type="file" name="fileToUpload" id="fileToUpload" required> <br> <br>
                 
 <!--Categoria-->
                 
                 <label>Categoria:</label>
-                <select id="categoria">
-                    <option value="select">Selecione...</option>
-                    <option value="prod2">prod2</option>
-                    <option value="prod3">prod3</option>
-                    <option value="prod4">prod4</option>
+                <select id="categoria" required>
+                    <option value="">Selecione...</option>
+                    <option value="alimento">Alimentos</option>
+                    <option value="roupa">Roupas</option>
+                    <option value="limpeza">Limpeza</option>
+                    
                 </select>
-   
+                <br><br>
                 
 <!--Enviar-->
 
